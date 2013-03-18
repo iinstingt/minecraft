@@ -19,12 +19,14 @@ end
 step = 0
 toTorch = TORCH
 while step <= DEPTH do
+	if t.getFuelLevel()<10 then
+		print("Fuel is empty")
 	t.dig()
 	t.forward()
 	step = step + 1
 	toTorch = toTorch -1
 	if toTorch == 0 then 
-		if t.getItemCount(2)==0 then
+		if t.getItemCount(2)<2 then
 			print("Ended torches")
 			break
 		end
