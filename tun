@@ -6,13 +6,18 @@ step = 0
 toTorch = TORCH
 while step <= DEPTH do
 	if t.getFuelLevel()<DEPTH then
-		print("Fuel is empty")
-		print("For start need ", DEPTH, " fuel level (", DEPTH/100, " coal), ",DEPTH/TORCH," torchs and 10 chests")
-		break
+		if t.getItemCount(3)<DEPTH/100 then
+			print("Fuel is empty")
+			print("For start need ", DEPTH, " fuel level (", DEPTH/100, " coal), ",DEPTH/TORCH," torchs and 10 chests")
+			break
+		else
+			t.select(3)
+			t.refuel()
+		end
 	end
 	if t.getItemCount(1)<10 or t.getItemCount(2)<DEPTH/TORCH then
 		print("Not enouth items.")
-		print("For start need ", DEPTH, " fuel level (", DEPTH/100, " coal), ",DEPTH/TORCH," torchs and 10 chests")
+		print("For start need ", DEPTH, " fuel level (", DEPTH/100, " coal on 3-rd slot), ",DEPTH/TORCH," torchs on 2-nd slot and 10 chests on 1-st slot")
 		break
 	end
 	t.dig()
