@@ -21,6 +21,7 @@ toTorch = TORCH
 while step <= DEPTH do
 	if t.getFuelLevel()<10 then
 		print("Fuel is empty")
+		break
 	end
 	t.dig()
 	t.forward()
