@@ -5,15 +5,16 @@ t = turtle
 step = 0
 toTorch = TORCH
 while step <= DEPTH do
-	if t.getFuelLevel()<10 then
+	if t.getFuelLevel()<DEPTH then
 		print("Fuel is empty")
+		print("For start need ", DEPTH, " fuel level (", DEPTH/100, " coal), ",DEPTH/TORCH," torchs and 10 chests")
 		break
 	end
-	if t.getItemCount(1)<10 and t.getItemCount(2)<10 then
-		print("Not enouth items")
+	if t.getItemCount(1)<10 or t.getItemCount(2)<DEPTH/TORCH then
+		print("Not enouth items.")
+		print("For start need ", DEPTH, " fuel level (", DEPTH/100, " coal), ",DEPTH/TORCH," torchs and 10 chests")
 		break
 	end
-	if t.getItemCount(1) and
 	t.dig()
 	t.forward()
 	step = step + 1
