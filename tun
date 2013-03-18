@@ -7,12 +7,13 @@ function dropChes()
 	t.turnLeft()
 	t.turnLeft()
 	t.place()
-	fot i=3, 16 do 
+	for i=3, 16 do 
 		t.select(i)
 		t.drop()
 	end
 	t.turnLeft()
 	t.turnLeft()
+	t.select(3)
 end
 
 step = 0
