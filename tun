@@ -24,6 +24,10 @@ while step <= DEPTH do
 	step = step + 1
 	toTorch = toTorch -1
 	if toTorch == 0 then 
+		if t.getItemCount(2)==0 then
+			print("Ended torches")
+			break
+		end
 		toTorch = TORCH
 		t.turnLeft()
 		t.dig()
