@@ -9,6 +9,11 @@ while step <= DEPTH do
 		print("Fuel is empty")
 		break
 	end
+	if t.getItemCount(1)<10 and t.getItemCount(2)<10 then
+		print("Not enouth items")
+		break
+	end
+	if t.getItemCount(1) and
 	t.dig()
 	t.forward()
 	step = step + 1
