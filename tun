@@ -1,20 +1,6 @@
 DEPTH = 100
 TORCH = 10
-
 t = turtle
-function dropChes()
-	t.select(1)
-	t.turnLeft()
-	t.turnLeft()
-	t.place()
-	for i=3, 16 do 
-		t.select(i)
-		t.drop()
-	end
-	t.turnLeft()
-	t.turnLeft()
-	t.select(3)
-end
 
 step = 0
 toTorch = TORCH
@@ -42,6 +28,20 @@ while step <= DEPTH do
 	t.digUp()
 	t.digDown()
 	if t.getItemSpace(16)<64 then
-		dropChes()
+		if t.getItemCount(1)<2 then
+			print("Ended chests")
+			break
+		end
+		t.select(1)
+		t.turnLeft()
+		t.turnLeft()
+		t.place()
+		for i=3, 16 do 
+			t.select(i)
+			t.drop()
+		end
+		t.turnLeft()
+		t.turnLeft()
+		t.select(3)
 	end
 end
