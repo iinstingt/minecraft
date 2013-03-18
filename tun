@@ -1,0 +1,38 @@
+DEPTH = 100
+TORCH = 10
+
+t = turtle
+function dropChes()
+	t.select(1)
+	t.turnLeft()
+	t.turnLeft()
+	t.place()
+	fot i=3, 16 do 
+		t.select(i)
+		t.drop()
+	end
+	t.turnLeft()
+	t.turnLeft()
+end
+
+step = 0
+toTorch = TORCH
+while step <= DEPTH do
+	t.dig()
+	t.forward()
+	step = step + 1
+	toTorch = toTorch -1
+	if toTorch == 0 then 
+		toTorch = TORCH
+		t.turnLeft()
+		t.dig()
+		t.select(2)
+		t.place()
+		t.turnRight()
+	end
+	t.digUp()
+	t.digDown()
+	if t.getItemSpace(16)<64 then
+		dropChes()
+	end
+end
