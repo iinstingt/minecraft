@@ -8,7 +8,7 @@ while step <= DEPTH do
 	if t.getFuelLevel()<DEPTH then
 		if t.getItemCount(3)<DEPTH/100 then
 			print("Fuel is empty")
-			print("For start need ", DEPTH, " fuel level (", DEPTH/100, " coal), ",DEPTH/TORCH," torchs and 10 chests")
+			print("For start need ", DEPTH, " fuel level (", DEPTH/100, " coal on 3-rd slot), ",DEPTH/TORCH," torchs on 2-nd slot and 10 chests on 1-st slot")
 			break
 		else
 			t.select(3)
